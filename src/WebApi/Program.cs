@@ -1,6 +1,12 @@
+using FastEndpoints;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.AddServiceDefaults();
+
+builder.Services.AddFastEndpoints();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapFastEndpoints();
 
 app.Run();
